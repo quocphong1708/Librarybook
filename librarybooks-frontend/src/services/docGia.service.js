@@ -23,6 +23,11 @@ class DocGiaService {
     async delete(id) {
         return (await this.api.delete(`/${id}`)).data;
     }
+       async getBySDT(sdt){
+        return (await this.api.get(`/sdt/${sdt}`)).data;
+    }
+    
 }
 
 export default new DocGiaService();
+

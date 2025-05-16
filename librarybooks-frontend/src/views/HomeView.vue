@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import AdminWC from '../components/AdminWC.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <AdminWC />
   </main>
 </template>

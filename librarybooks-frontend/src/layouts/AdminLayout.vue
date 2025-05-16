@@ -1,39 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-
 </script>
 
 <template>
   <header>
     <img alt="logo" class="logo" src="@/assets/logo.png" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="Librarybooks reader page" />
-      <nav>
-        <RouterLink v-if="$route.params.id == undefined" to="/">Login</RouterLink>
-        <RouterLink v-if="$route.params.id != undefined" :to="`/${$route.params.id}`">Wellcome</RouterLink>
-        <RouterLink v-if="$route.params.id != undefined" :to="`/${$route.params.id}/sach`">Sách</RouterLink>
-        <RouterLink v-if="$route.params.id != undefined" :to="`/${$route.params.id}/themuonsach`">Theo dõi mượn sách</RouterLink>
-      </nav>
-    </div>
+    <nav>
+      <RouterLink to="/admin">Trang chủ</RouterLink>
+      <RouterLink to="/admin/nxb">Nhà xuất bản</RouterLink>
+      <RouterLink to="/admin/sach">Sách</RouterLink>
+      <RouterLink to="/admin/nhanvien">Nhân Viên</RouterLink>
+      <RouterLink to="/admin/docgia">Độc giả</RouterLink>
+      <RouterLink to="/admin/theodoimuonsach">Theo dõi mượn sách</RouterLink>
+    </nav>
   </header>
 
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      id: ''
-    };
-  },
-  created() {
-    this.$route.params.id == undefined ? this.id='guess' : this.id = this.$route.params.id;
-  }
-};
-</script>
 
 <style scoped>
 header {

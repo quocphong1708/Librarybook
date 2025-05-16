@@ -7,7 +7,9 @@ class TheoDoiMuonSachService {
     async getAll() {
         return (await this.api.get("/")).data;
     }
-
+  async getByDocGia(docGiaId){
+        return (await this.api.get(`/docgia/${docGiaId}`)).data
+    }
     async create(data) {
         return (await this.api.post("/", data)).data;
     } 
